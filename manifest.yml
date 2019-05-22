@@ -1,0 +1,6 @@
+package: myhouse-service-icloud
+revision: 1
+version: development
+git: myhouse-project/myhouse-service-icloud
+modules:
+  - service/icloud
