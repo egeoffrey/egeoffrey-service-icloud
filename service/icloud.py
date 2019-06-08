@@ -19,10 +19,10 @@ sys.setdefaultencoding('utf8')
 import json
 from pyicloud import PyiCloudmodule
 
-from sdk.module.service import Service
+from sdk.python.module.service import Service
 
-import sdk.utils.datetimeutils
-import sdk.utils.exceptions as exception
+import sdk.python.utils.datetimeutils
+import sdk.python.utils.exceptions as exception
 
 # 
 # configuration:
@@ -84,7 +84,7 @@ class Icloud(Service):
                 # identify the device
                 if entry != device_name: continue
                 # normalize the data for a map
-                date = sdk.utils.datetimeutils.timestamp2date(self.date.timezone(int(data[device_name]["timeStamp"]/1000)))
+                date = sdk.python.utils.datetimeutils.timestamp2date(self.date.timezone(int(data[device_name]["timeStamp"]/1000)))
                 device["label"] = str(device_name)
                 device["text"] = str("<p><b>"+device_name+":</b></p><p>"+date+" ("+data[device_name]["positionType"]+") </p>")
                 device["latitude"] = data[device_name]["latitude"]
