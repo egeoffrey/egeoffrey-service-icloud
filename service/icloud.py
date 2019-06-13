@@ -78,21 +78,21 @@ class Icloud(Service):
                 data = json.dumps(locations)
                 self.cache.add(cache_key, data)
             data = json.loads(data)
-            device = {}
+            position = {}
             # for each device
             for entry in data:
                 # identify the device
                 if entry != device_name: continue
                 # normalize the data for a map
                 date = sdk.python.utils.datetimeutils.timestamp2date(self.date.timezone(int(data[device_name]["timeStamp"]/1000)))
-                device["label"] = str(device_name)
-                device["text"] = str("<p><b>"+device_name+":</b></p><p>"+date+" ("+data[device_name]["positionType"]+") </p>")
-                device["latitude"] = data[device_name]["latitude"]
-                device["longitude"] = data[device_name]["longitude"]
-                device["accuracy"] = data[device_name]["horizontalAccuracy"]
+                position["label"] = str(device_name)
+                position["text"] = str("<p><b>"+device_name+":</b></p><p>"+date+" ("+data[device_name]["positionType"]+") </p>")
+                position["latitude"] = data[device_name]["latitude"]
+                position["longitude"] = data[device_name]["longitude"]
+                position["accuracy"] = data[device_name]["horizontalAccuracy"]
                 # send the response back
                 message.reply()
-                message.set("value", device)
+                message.set("value", json.dumps(position))
                 self.send(message)
 
     # What to do when receiving a new/updated configuration for this module    
