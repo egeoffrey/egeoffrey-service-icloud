@@ -1,6 +1,9 @@
 package: myhouse-service-icloud
-revision: 2
+revision: 3
 version: development
-git: myhouse-project/myhouse-service-icloud
+github: myhouse-project/myhouse-service-icloud
+dockerhub: myhouse-project/myhouse-service-icloud
+description: Retrieve position of a device from Apple icloud service
+tags: service apple position
 modules:
   - service/icloud
