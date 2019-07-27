@@ -98,6 +98,6 @@ class Icloud(Service):
     # What to do when receiving a new/updated configuration for this module    
     def on_configuration(self,message):
         # we need house timezone
-        if message.args == "house":
-            if not self.is_valid_module_configuration(["timezone", "units", "language"], message.get_data()): return False
+        if message.args == "house" and not message.is_null:
+            if not self.is_valid_configuration(["timezone", "units", "language"], message.get_data()): return False
             self.date = DateTimeUtils(message.get("timezone"))
