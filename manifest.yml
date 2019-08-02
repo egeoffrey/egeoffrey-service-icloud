@@ -1,23 +1,24 @@
-manifest_schema: 1
-package: myhouse-service-icloud
-revision: 4
-version: development
-github: myhouse-project/myhouse-service-icloud
-dockerhub: myhouseproject/myhouse-service-icloud
+branch: development
 description: Retrieve position of a device from Apple icloud service
-tags: service apple position
+dockerhub: myhouseproject/myhouse-service-icloud
+github: myhouse-project/myhouse-service-icloud
+manifest_schema: 2
 modules:
-  - service/icloud:
-      description: Retrieve position of a device from Apple icloud service
-      service_configuration: 
-        active:
-          - name: username
-            description: The username of the icloud account
-            format: string
-            placeholder: username@email.com
-            required: true
-          - name: device_name
-            description: The name of the device to monitor
-            format: string
-            placeholder: my_iPhone
-            required: true
+- service/icloud:
+    description: Retrieve position of a device from Apple icloud service
+    service_configuration:
+      active:
+      - description: The username of the icloud account
+        format: string
+        name: username
+        placeholder: username@email.com
+        required: true
+      - description: The name of the device to monitor
+        format: string
+        name: device_name
+        placeholder: my_iPhone
+        required: true
+package: myhouse-service-icloud
+revision: 5
+tags: service apple position
+version: 1.0
