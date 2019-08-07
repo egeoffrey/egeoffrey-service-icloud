@@ -1,7 +1,7 @@
 branch: development
 description: Retrieve position of a device from Apple icloud service
-dockerhub: myhouseproject/myhouse-service-icloud
-github: myhouse-project/myhouse-service-icloud
+dockerhub: egeoffrey/egeoffrey-service-icloud
+github: egeoffrey/egeoffrey-service-icloud
 icon: apple-alt
 manifest_schema: 2
 modules:
@@ -19,7 +19,7 @@ modules:
         name: device_name
         placeholder: my_iPhone
         required: true
-package: myhouse-service-icloud
-revision: 6
+package: egeoffrey-service-icloud
+revision: 7
 tags: service apple position
 version: 1.0
