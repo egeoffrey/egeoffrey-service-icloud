@@ -101,3 +101,9 @@ class Icloud(Service):
         if message.args == "house" and not message.is_null:
             if not self.is_valid_configuration(["timezone", "units", "language"], message.get_data()): return False
             self.date = DateTimeUtils(message.get("timezone"))
+        # register/unregister the sensor
+        if message.args.startswith("sensors/"):
+            if message.is_null: 
+                sensor_id = self.unregister_sensor(message)
+            else: 
+                sensor_id = self.register_sensor(message)

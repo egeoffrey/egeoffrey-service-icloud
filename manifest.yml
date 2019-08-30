@@ -20,6 +20,6 @@ modules:
         placeholder: my_iPhone
         required: true
 package: egeoffrey-service-icloud
-revision: 7
+revision: 8
 tags: service apple position
 version: 1.0
