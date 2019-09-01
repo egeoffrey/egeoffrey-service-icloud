@@ -8,7 +8,7 @@ modules:
 - service/icloud:
     description: Retrieve position of a device from Apple icloud service
     service_configuration:
-      active:
+      pull:
       - description: The username of the icloud account
         format: string
         name: username
@@ -20,6 +20,6 @@ modules:
         placeholder: my_iPhone
         required: true
 package: egeoffrey-service-icloud
-revision: 8
+revision: 9
 tags: service apple position
 version: 1.0
