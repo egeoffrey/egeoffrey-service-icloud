@@ -9,4 +9,4 @@ FROM egeoffrey/egeoffrey-sdk-alpine:${SDK_VERSION}-${ARCHITECTURE}
 
 ### copy files into the image
 COPY . $WORKDIR
-RUN pip install pyicloud
+RUN pip install pyicloud click==6.7
