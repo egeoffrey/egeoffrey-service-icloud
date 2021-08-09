@@ -61,4 +61,4 @@ service apple position
 
 ## Version
 
-The version of this egeoffrey-service-icloud is 1.0-15 on the master branch.
+The version of this egeoffrey-service-icloud is 1.1-1 on the master branch.
